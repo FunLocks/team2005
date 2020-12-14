@@ -10,25 +10,25 @@ class MainActivity : AppCompatActivity(){
         when (item.itemId) {
             R.id.navi_home -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.navigation, HomeFragment())
+                    .replace(R.id.frameLayout, HomeFragment())
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_graph -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.navigation, GraphFragment())
+                    .replace(R.id.frameLayout, GraphFragment())
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_myplace -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.navigation, MyplaceFragment())
+                    .replace(R.id.frameLayout, MyplaceFragment())
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_forecast -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.navigation, ForecastFragment())
+                    .replace(R.id.frameLayout, ForecastFragment())
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
