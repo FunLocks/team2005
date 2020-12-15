@@ -6,6 +6,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yeahoohunters.avoavo.R
 
 class MainActivity : AppCompatActivity(){
+
+    // Bottom Navigationの遷移設定
     private val navListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navi_home -> {
