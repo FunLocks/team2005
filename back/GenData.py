@@ -63,8 +63,26 @@ class GenerateData:
         make_data("floor_5",floor_5)
 
         return
+    
+    def now_situation(self, random_min: int, random_max: int):
+        df_1 = pd.DataFrame(columns=['location_id','congection'])
+        for i in range(77):
+            df_1 = df_1.append({'location_id':i+1, 'congection':random.randint(random_min,random_max)}, ignore_index=True)
+        
+        print(df_1)
+        json_data = df_1.to_dict()
+
+        filename = "sampledata/CongectionNow.json"
+        print(filename)
+        with open(filename, 'w') as f:
+            json.dump(json_data, f, indent=4,ensure_ascii=False)
+
+
+
+
+    
 
 
 if __name__ == '__main__':
     generator = GenerateData()
-    generator.favorite(1,20)
+    generator.now_situation(1,20)
