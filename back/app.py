@@ -1,6 +1,9 @@
 from flask import Flask, render_template,jsonify,request # 変更
+from database import db, beacon_data
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
+app.config.from_object('config.Config')
+db.init_app(app)
 
 @app.route('/now_situation', methods=['GET'])
 def get():
@@ -82,6 +85,8 @@ def post():
     value = data['time']
     print(f"data['location_id']: {location}")
     print(f"data['time']: {value}")
+    db.session.add(beacon_data(location_id=location, time=value))
+    db.session.commit()
     return jsonify(data)
 
 

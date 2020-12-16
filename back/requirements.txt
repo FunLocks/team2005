@@ -1,2 +1,5 @@
-Flask
+flask
 gunicorn
+psycopg2
+SQLAlchemy
+flask-sqlalchemy
