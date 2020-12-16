@@ -16,8 +16,21 @@ class GenerateData:
         return
 
     def favorite(self, random_min: int, random_max: int):
-        fav: DataFrame = pd.DataFrame(columns=['location_id','time','congection'])
-        return fav
+        for i in range(1,78):
+            fav: DataFrame = pd.DataFrame(columns=['time','congection'])
+
+            for j in range(1,25):
+                fav = fav.append({'time':j,'congection':random.randint(random_min,random_max)}, ignore_index=True)
+            
+            print(fav)
+            json_data = fav.to_dict()
+
+            filename = "sampledata/favorite/location_id_" + str(i) + ".json"
+            print(filename)
+            with open(filename, 'w') as f:
+                json.dump(json_data, f, indent=4,ensure_ascii=False)
+
+        return 
     
     def predict(self,random_min: int,random_max: int):
         floor_1 = [1,2,3,4,5,60,61,62]
@@ -54,4 +67,4 @@ class GenerateData:
 
 if __name__ == '__main__':
     generator = GenerateData()
-    generator.predict(1,20)
+    generator.favorite(1,20)
