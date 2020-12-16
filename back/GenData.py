@@ -39,7 +39,7 @@ class GenerateData:
             filename = "sampledata/predict/" + floor + ".json"
             print(filename)
             with open(filename, 'w') as f:
-                json.dump(json_data, f, ensure_ascii=False)
+                json.dump(json_data, f, indent=4,ensure_ascii=False)
             
             return
             
