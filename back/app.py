@@ -1,5 +1,6 @@
 from flask import Flask, render_template,jsonify,request # 変更
 from database import db, beacon_data
+from now_people import now_congection
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 app.config.from_object('config.Config')
@@ -7,74 +8,7 @@ db.init_app(app)
 
 @app.route('/now_situation', methods=['GET'])
 def get():
-    response = [
-    {
-        "time": "2020/12/15 00:00:00",
-        "time_people": 0
-    },
-    {
-        "time": "2020/12/15 01:00:00",
-        "time_people": 12
-    },
-    {
-        "time": "2020/12/15 02:00:00",
-        "time_people": 32
-    },
-    {
-        "time": "2020/12/15 03:00:00",
-        "time_people": 14
-    },
-    {
-        "time": "2020/12/15 04:00:00",
-        "time_people": 26
-    },
-    {
-        "time": "2020/12/15 05:00:00",
-        "time_people": 57
-    },
-    {
-        "time": "2020/12/15 06:00:00",
-        "time_people": 22
-    },
-    {
-        "time": "2020/12/15 07:00:00",
-        "time_people": 49
-    },
-    {
-        "time": "2020/12/15 08:00:00",
-        "time_people": 2
-    },
-    {
-        "time": "2020/12/15 09:00:00",
-        "time_people": 0
-    },
-    {
-        "time": "2020/12/15 10:00:00",
-        "time_people": 7
-    },
-    {
-        "time": "2020/12/15 11:00:00",
-        "time_people": 13
-    },
-    {
-        "time": "2020/12/15 12:00:00",
-        "time_people": 22
-    },
-    {
-        "time": "2020/12/15 13:00:00",
-        "time_people": 42
-    },
-    {
-        "time": "2020/12/15 14:00:00",
-        "time_people": 68
-    },
-    {
-        "time": "2020/12/15 15:00:00",
-        "time_people": 7
-    }
-]
-
-
+    response = now_congection()
     return jsonify(response)
 
 
@@ -91,5 +25,5 @@ def post():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='127.0.0.1', debug=True)
 
