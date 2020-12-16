@@ -1,5 +1,5 @@
 import datetime
-from database import *
+from database import db
 
 def now_congection():
     dt_now = datetime.datetime.now()
