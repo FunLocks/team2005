@@ -5,10 +5,11 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class NowSituation (
-    val congection: Congection
+    val congection: List<Congection>
 ){
     @Entity(tableName = "now_situation")
     data class Congection(
-            @PrimaryKey val map: MutableMap<String, Int>
+            @PrimaryKey val location_id: String,
+            val people: Int
     )
 }

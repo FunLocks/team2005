@@ -11,7 +11,10 @@ interface NowSituationDao {
     fun insertNowSituationItem(vararg item: Congection)
 
     @Query("select * from now_situation")
-    fun getNowSituation(): Congection
+    fun getNowSituation(): List<Congection>
+
+    @Query("select * from now_situation where location_id=:locationId")
+    fun getSweetsItem(locationId: Int): Congection
 
     @Query("delete from now_situation")
     fun deleteNowSituation()

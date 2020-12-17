@@ -2,7 +2,7 @@ package com.yeahoohunters.avoavo.repository
 
 import com.yeahoohunters.avoavo.model.Params
 import com.yeahoohunters.avoavo.model.api.Interface
-import com.yeahoohunters.avoavo.model.api.responce.NowSituation.Congestion
+import com.yeahoohunters.avoavo.model.api.responce.NowSituation.Congection
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
@@ -18,13 +18,13 @@ class NowSituationRepository {
     private val nowSituationService =
         retrofit.create(Interface.CreateNowSituationsItemService::class.java)
 
-    suspend fun getRemoteNowSituationList(): List<Congestion> {
-        var nowSituationList: List<Congestion> = listOf()
+    suspend fun getRemoteNowSituationList(): List<Congection> {
+        var nowSituationList: List<Congection> = listOf<Congection>()
         withContext(IO) {
             try {
                 val response = nowSituationService.listNowSituation().execute().body()
                 if (response != null) {
-                    nowSituationList = response.congestion
+                    nowSituationList = response.congection
                 }
             } catch (e: IOException) {
                 e.printStackTrace()
