@@ -1,7 +1,7 @@
 from flask import Flask, render_template,jsonify,request # 変更
 from database import db, beacon_data
 from now_people import now_congection
-from favorite_predict import favorite_predict
+#from favorite_predict import favorite_predict
 import json
 
 app = Flask(__name__)
@@ -23,6 +23,11 @@ def get_fav(location_id):
     json_load = json.load(json_open)
     return jsonify(json_load)
 
+@app.route('/predict/<floor>', methods=['GET'])
+def get_predict(floor):
+    json_open = open('sampledata/predict/floor_'+floor+'.json', 'r')
+    json_load = json.load(json_open)
+    return jsonify(json_load)
 
 @app.route('/post', methods=['POST'])
 def post():
