@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/fun_1F"
         app:layout_constraintEnd_toEndOf="@+id/fun_1F"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fun_1F"
         app:layout_constraintTop_toTopOf="@+id/fun_1F"
         app:layout_constraintVertical_bias="0.583" />
 
@@ -63,7 +63,7 @@
         android:layout_height="44dp"
         android:src="@drawable/congestion_circle"
         app:layout_constraintBottom_toBottomOf="@+id/fun_1F"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fun_1F"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="@+id/fun_1F"
         app:layout_constraintTop_toTopOf="@+id/fun_1F"
@@ -75,7 +75,7 @@
         android:layout_height="48dp"
         android:src="@drawable/congestion_circle"
         app:layout_constraintBottom_toBottomOf="@+id/fun_1F"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fun_1F"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/fun_1F"
         app:layout_constraintTop_toTopOf="@+id/fun_1F"
@@ -113,7 +113,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/fun_1F"
         app:layout_constraintEnd_toEndOf="@+id/fun_1F"
         app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fun_1F"
         app:layout_constraintTop_toTopOf="@+id/fun_1F"
         app:layout_constraintVertical_bias="0.43" />
 </androidx.constraintlayout.widget.ConstraintLayout>
