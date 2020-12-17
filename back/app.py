@@ -18,6 +18,7 @@ def get_now():
 def get_fav(location_id):
     #response = favorite_predict(location_id)
     #return jsonify(response)
+
     json_open = open('sampledata/favorite/location_id_'+location_id+'.json', 'r')
     json_load = json.load(json_open)
     return jsonify(json_load)
@@ -27,7 +28,6 @@ def get_predict(floor):
     json_open = open('sampledata/predict/floor_'+floor+'.json', 'r')
     json_load = json.load(json_open)
     return jsonify(json_load)
-
 
 @app.route('/post', methods=['POST'])
 def post():
