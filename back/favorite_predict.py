@@ -4,7 +4,7 @@ import datetime
 from database import db
 
 def favorite_predict(location_id: str):
-    t = f"select location_id,time from beacon_data"
+    t = 'select location_id,time from beacon_data'
     for r in db.session.execute(t):
         print (r['location_id'])
         print (r['time'])
