@@ -8,8 +8,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.os.RemoteException
 import android.util.Log
-import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import org.altbeacon.beacon.*
 import permissions.dispatcher.*
@@ -18,13 +16,12 @@ import java.text.SimpleDateFormat
 
 
 @RuntimePermissions
-class MainActivity : AppCompatActivity(), BeaconConsumer{
+class MainActivity : AppCompatActivity(), BeaconConsumer {
 
     private val UNIQUE_ID: String? = "iBeacon"
     private val UUID: String? = null
     private val MAJOR: String? = null
     private val MINOR: String? = null
-    private lateinit var beacon_list: LinearLayout
 
     /**
      * 受信するビーコンの設定
@@ -43,26 +40,26 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
         when (item.itemId) {
             R.id.navi_home -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, HomeFragment())
-                    .commit()
+                        .replace(R.id.frameLayout, HomeFragment())
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_graph -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, GraphFragment())
-                    .commit()
+                        .replace(R.id.frameLayout, GraphFragment())
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_myplace -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, MyplaceFragment())
-                    .commit()
+                        .replace(R.id.frameLayout, MyplaceFragment())
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_forecast -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, ForecastFragment())
-                    .commit()
+                        .replace(R.id.frameLayout, ForecastFragment())
+                        .commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -76,14 +73,14 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
         navigation.setOnNavigationItemSelectedListener(navListener)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.frameLayout, HomeFragment())
-            .commit()
+                .replace(R.id.frameLayout, HomeFragment())
+                .commit()
 
         beaconManager = BeaconManager.getInstanceForApplication(this)
         beaconManager.isRegionStatePersistenceEnabled = false
         beaconManager.foregroundBetweenScanPeriod = 320000 // アプリをつけている時の時間間隔
-        beaconManager.backgroundBetweenScanPeriod = 0;
-        beaconManager.backgroundScanPeriod = 280000; //　バックでの（アプリをつけた時の時間間隔）
+        beaconManager.backgroundBetweenScanPeriod = 0
+        beaconManager.backgroundScanPeriod = 280000 //　バックでの（アプリをつけた時の時間間隔）
         beaconManager.beaconParsers.add(BeaconParser().setBeaconLayout(IBEACON_FORMAT))
         startScanWithPermissionCheck()
     }
@@ -93,16 +90,8 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
         /**
          * altbeacon終了
          */
-        beaconManager.unbind(this)
-    }
-
-
-    fun onClickStop(view: View) {
         stopScan()
-    }
-
-    fun onClickReset(view: View) {
-        beacon_list.removeAllViews()
+        beaconManager.unbind(this)
     }
 
     @SuppressLint("SetTextI18n")
@@ -115,14 +104,14 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
              * ビーコンの範囲内に入った時の処理
              */
             override fun didEnterRegion(region: Region?) {
-                Toast.makeText(applicationContext, "Enter Region", Toast.LENGTH_SHORT).show()
+                Log.d("didEnterRegion", "Enter Region")
             }
 
             /**
              * ビーコンの範囲内から出た時の処理
              */
             override fun didExitRegion(region: Region?) {
-                Toast.makeText(applicationContext, "Exit Region", Toast.LENGTH_SHORT).show()
+                Log.d("didExitRegion", "Exit Region")
             }
 
             /**
@@ -137,11 +126,16 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
          * ビーコンの範囲内にいるときに継続的に行われる処理
          */
         beaconManager.addRangeNotifier { beacons, _ ->
-            for(beacon in beacons) {
+            for (beacon in beacons) {
                 Log.d(
                         "beaconInfo", "UUID:${beacon.id1}\n" +
                         ", TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}\n"
                 )
+
+                /**
+                 * POST処理
+                 */
+                //TODO:ここにPOSTの処理を書いていく
             }
         }
     }
