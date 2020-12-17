@@ -4,20 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yeahoohunters.avoavo.R
-
 import android.Manifest
 import android.annotation.SuppressLint
 import android.os.RemoteException
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import org.altbeacon.beacon.*
 import permissions.dispatcher.*
 import java.sql.Date
 import java.text.SimpleDateFormat
-import kotlin.math.floor
+
 
 @RuntimePermissions
 class MainActivity : AppCompatActivity(), BeaconConsumer{
@@ -83,14 +81,15 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
 
         beaconManager = BeaconManager.getInstanceForApplication(this)
         beaconManager.isRegionStatePersistenceEnabled = false
-        beaconManager.foregroundBetweenScanPeriod = 5000
+        beaconManager.foregroundBetweenScanPeriod = 320000 // アプリをつけている時の時間間隔
+        beaconManager.backgroundBetweenScanPeriod = 0;
+        beaconManager.backgroundScanPeriod = 280000; //　バックでの（アプリをつけた時の時間間隔）
         beaconManager.beaconParsers.add(BeaconParser().setBeaconLayout(IBEACON_FORMAT))
         startScanWithPermissionCheck()
     }
 
-    override fun onPause() {
-        super.onPause()
-
+    override fun onDestroy() {
+        super.onDestroy()
         /**
          * altbeacon終了
          */
@@ -139,7 +138,10 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
          */
         beaconManager.addRangeNotifier { beacons, _ ->
             for(beacon in beacons) {
-                Log.d("beaconInfo", "UUID:${beacon.id1}, TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}")
+                Log.d(
+                        "beaconInfo", "UUID:${beacon.id1}\n" +
+                        ", TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}\n"
+                )
             }
         }
     }
