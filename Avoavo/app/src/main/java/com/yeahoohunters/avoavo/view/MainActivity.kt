@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
         beaconManager.isRegionStatePersistenceEnabled = false
         beaconManager.foregroundBetweenScanPeriod = 5000
         beaconManager.beaconParsers.add(BeaconParser().setBeaconLayout(IBEACON_FORMAT))
-
+        startScanWithPermissionCheck()
     }
 
     override fun onPause() {
@@ -139,16 +139,7 @@ class MainActivity : AppCompatActivity(), BeaconConsumer{
          */
         beaconManager.addRangeNotifier { beacons, _ ->
             for(beacon in beacons) {
-                val textView = TextView(this)
-                textView.text =
-                        "UUID（固有ID）: ${beacon.id1}\n" +
-                                "Major: ${beacon.id2}\n" +
-                                "Minor: ${beacon.id3}\n" +
-                                "RSSI: ${beacon.rssi}\n" +
-                                "Accuracy: ${floor(beacon.distance * 100) /100}m\n" +
-                                "TimeStamp: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}\n"
-
-                beacon_list.addView(textView)
+                Log.d("beaconInfo", "UUID:${beacon.id1}, TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}")
             }
         }
     }
