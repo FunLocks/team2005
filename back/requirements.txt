@@ -1,2 +1,6 @@
 Flask
 gunicorn
+psycopg2
+SQLAlchemy
+flask-sqlalchemy
+pandas

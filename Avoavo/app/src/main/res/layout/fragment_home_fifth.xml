@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HomeFifthFragment" >
+
+    <ImageView
+        android:id="@+id/fun_5F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:src="@drawable/fun_5f"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/circle_37"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_38"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_39"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_40"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_41"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_42"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_43"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_44"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_45"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_46"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/circle_47"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <ImageView
+        android:id="@+id/circle_48"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <ImageView
+        android:id="@+id/circle_49"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.2185" />
+
+    <ImageView
+        android:id="@+id/circle_50"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <ImageView
+        android:id="@+id/circle_51"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <ImageView
+        android:id="@+id/circle_52"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.240" />
+
+    <ImageView
+        android:id="@+id/circle_53"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.240" />
+
+    <ImageView
+        android:id="@+id/circle_54"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <ImageView
+        android:id="@+id/circle_55"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <ImageView
+        android:id="@+id/circle_56"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <ImageView
+        android:id="@+id/circle_57"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <ImageView
+        android:id="@+id/circle_58"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.480"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.493" />
+
+    <ImageView
+        android:id="@+id/circle_59"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.493" />
+
+    <ImageView
+        android:id="@+id/circle_75"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <ImageView
+        android:id="@+id/circle_76"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.325" />
+
+    <ImageView
+        android:id="@+id/circle_77"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/congestion_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fun_5F"
+        app:layout_constraintEnd_toEndOf="@+id/fun_5F"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="@+id/fun_5F"
+        app:layout_constraintTop_toTopOf="@+id/fun_5F"
+        app:layout_constraintVertical_bias="0.585" />
+</androidx.constraintlayout.widget.ConstraintLayout>
