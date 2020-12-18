@@ -9,10 +9,6 @@ import android.annotation.SuppressLint
 import android.os.RemoteException
 import android.util.Log
 import android.widget.Toast
-import com.yeahoohunters.avoavo.model.room.NowSituationDao
-import com.yeahoohunters.avoavo.model.room.NowSituationDatabase
-import com.yeahoohunters.avoavo.repository.NowSituationRepository
-import kotlinx.coroutines.*
 import org.altbeacon.beacon.*
 import permissions.dispatcher.*
 import java.sql.Date
