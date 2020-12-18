@@ -1,5 +1,6 @@
 .DS_Store
 config.py
+.vscode/
 
 # Created by https://www.toptal.com/developers/gitignore/api/vscode,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=vscode,python
