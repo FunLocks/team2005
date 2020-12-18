@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.yeahoohunters.avoavo.R
 
-class HomeFirstFragment : Fragment() {
+class HomeFirstFragment : Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

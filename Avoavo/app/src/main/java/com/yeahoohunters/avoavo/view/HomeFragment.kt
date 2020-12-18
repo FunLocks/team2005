@@ -1,15 +1,19 @@
 package com.yeahoohunters.avoavo.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.yeahoohunters.avoavo.R
+import com.yeahoohunters.avoavo.model.api.responce.NowSituation.Congection
+import com.yeahoohunters.avoavo.model.room.NowSituationDatabase
+import com.yeahoohunters.avoavo.repository.NowSituationRepository
+import kotlinx.coroutines.*
 
 class HomeFragment : Fragment() {
     var onClose: Boolean = true
@@ -25,6 +29,40 @@ class HomeFragment : Fragment() {
 
     lateinit var rotateBackward: Animation
     lateinit var rotateForward: Animation
+
+    lateinit var localNowSituationList: List<Congection>
+    val bundle = Bundle()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val nowSituationDao = activity?.application?.let { NowSituationDatabase.getDatabase(it).nowSituationDao() }
+        val nowSituationRepository = nowSituationDao?.let{ NowSituationRepository(it) }
+        val scope = CoroutineScope(Job() + Dispatchers.Main)
+
+        if(nowSituationRepository != null) scope.launch (Dispatchers.Main){
+            async(Dispatchers.IO){
+                nowSituationRepository.getRemoteNowSituationList()
+            }.await()
+                .let {
+                    Log.d("ApiResult", it.toString())
+
+                    if (it.isNotEmpty()) {
+                        nowSituationRepository.deleteLocalNowSituationList()
+                        for (remoteNowSituation in it) {
+                            nowSituationRepository.insertLocalNowSituationItem(remoteNowSituation)
+                            Log.d("InsertItem", remoteNowSituation.toString())
+                        }
+                    }
+
+                    localNowSituationList = withContext(Dispatchers.IO) { nowSituationRepository.getLocalNowSituationList() }
+                    for (item in localNowSituationList){
+                        Log.d("listItem", item.toString())
+
+                        bundle.putInt(item.location_id.toString(), item.value)
+                    }
+                }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +82,7 @@ class HomeFragment : Fragment() {
         fabFourth = view.findViewById(R.id.fab_floor_fourth) as FloatingActionButton
         fabFifth = view.findViewById(R.id.fab_floor_fifth) as FloatingActionButton
 
-        fabMain.setOnClickListener { view ->
+        fabMain.setOnClickListener {
             if (onClose) {
                 openFab()
             } else {
@@ -52,41 +90,58 @@ class HomeFragment : Fragment() {
             }
         }
 
-        fabFirst.setOnClickListener{view ->
+        fabFirst.setOnClickListener{
+            closeFab()
+            val fragment = HomeFirstFragment()
+            fragment.arguments = bundle
             parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrameLayout, HomeFirstFragment())
+                    .replace(R.id.fragmentFrameLayout, fragment)
                     .commit()
         }
 
-        fabSecond.setOnClickListener{ view ->
+        fabSecond.setOnClickListener{
+            closeFab()
+            val fragment = HomeSecondFragment()
+            fragment.arguments = bundle
             parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrameLayout, HomeSecondFragment())
-                    .commit()
+                .replace(R.id.fragmentFrameLayout, fragment)
+                .commit()
         }
 
-        fabThird.setOnClickListener { view ->
+        fabThird.setOnClickListener {
+            closeFab()
+            val fragment = HomeThirdFragment()
+            fragment.arguments = bundle
             parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrameLayout, HomeThirdFragment())
-                    .commit()
+                .replace(R.id.fragmentFrameLayout, fragment)
+                .commit()
         }
 
-        fabFourth.setOnClickListener{ view ->
+        fabFourth.setOnClickListener{
+            closeFab()
+            val fragment = HomeFourthFragment()
+            fragment.arguments = bundle
             parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrameLayout, HomeFourthFragment())
-                    .commit()
+                .replace(R.id.fragmentFrameLayout, fragment)
+                .commit()
         }
 
-        fabFifth.setOnClickListener { view ->
+        fabFifth.setOnClickListener {
+            closeFab()
+            val fragment = HomeFifthFragment()
+            fragment.arguments = bundle
             parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrameLayout, HomeFifthFragment())
-                    .commit()
+                .replace(R.id.fragmentFrameLayout, fragment)
+                .commit()
         }
 
         firstCloseFab()
 
+        val fragment = HomeThirdFragment()
+        fragment.arguments = bundle
         parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentFrameLayout, HomeThirdFragment())
-                .commit()
+            .replace(R.id.fragmentFrameLayout, fragment)
+            .commit()
 
         // Inflate the layout for this fragment
         return view

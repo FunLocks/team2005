@@ -9,6 +9,10 @@ import android.annotation.SuppressLint
 import android.os.RemoteException
 import android.util.Log
 import android.widget.Toast
+import com.yeahoohunters.avoavo.model.room.NowSituationDao
+import com.yeahoohunters.avoavo.model.room.NowSituationDatabase
+import com.yeahoohunters.avoavo.repository.NowSituationRepository
+import kotlinx.coroutines.*
 import org.altbeacon.beacon.*
 import permissions.dispatcher.*
 import java.sql.Date
@@ -27,10 +31,10 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
      * 受信するビーコンの設定
      */
     private val region = Region(
-            UNIQUE_ID,
-            UUID?.let { Identifier.parse(it) },
-            MAJOR?.let { Identifier.parse(it) },
-            MINOR?.let { Identifier.parse(it) })
+        UNIQUE_ID,
+        UUID?.let { Identifier.parse(it) },
+        MAJOR?.let { Identifier.parse(it) },
+        MINOR?.let { Identifier.parse(it) })
 
     private val IBEACON_FORMAT = "m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"
     private lateinit var beaconManager: BeaconManager
@@ -40,26 +44,26 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
         when (item.itemId) {
             R.id.navi_home -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, HomeFragment())
-                        .commit()
+                    .replace(R.id.frameLayout, HomeFragment())
+                    .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_graph -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, GraphFragment())
-                        .commit()
+                    .replace(R.id.frameLayout, GraphFragment())
+                    .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_myplace -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, MyplaceFragment())
-                        .commit()
+                    .replace(R.id.frameLayout, MyplaceFragment())
+                    .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navi_forecast -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, ForecastFragment())
-                        .commit()
+                    .replace(R.id.frameLayout, ForecastFragment())
+                    .commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -73,8 +77,10 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
         navigation.setOnNavigationItemSelectedListener(navListener)
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.frameLayout, HomeFragment())
-                .commit()
+            .replace(R.id.frameLayout, HomeFragment())
+            .commit()
+
+
 
         beaconManager = BeaconManager.getInstanceForApplication(this)
         beaconManager.isRegionStatePersistenceEnabled = false
@@ -128,8 +134,8 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
         beaconManager.addRangeNotifier { beacons, _ ->
             for (beacon in beacons) {
                 Log.d(
-                        "beaconInfo", "UUID:${beacon.id1}\n" +
-                        ", TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}\n"
+                    "beaconInfo", "UUID:${beacon.id1}\n" +
+                            ", TimeStamp（最終観測時刻）: ${convertTimeStamp(beacon.lastCycleDetectionTimestamp)}\n"
                 )
 
                 /**
@@ -198,7 +204,11 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
         Toast.makeText(this, "位置情報が許可されていません、設定から許可してください。", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         this.onRequestPermissionsResult(requestCode, grantResults)
     }
@@ -209,5 +219,4 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
         val date = Date(lastTimeStamp)
         return simpleDateFormat.format(date)
     }
-
 }
