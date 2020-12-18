@@ -25,8 +25,6 @@ class PredictData:
         self.periods = self.periods.append({'period':3,'start_time':'2020/12/18 13:10','end_time':'2020/12/18 14:40'}, ignore_index=True)
         self.periods = self.periods.append({'period':4,'start_time':'2020/12/18 14:50','end_time':'2020/12/18 16:20'}, ignore_index=True)
         self.periods = self.periods.append({'period':5,'start_time':'2020/12/18 16:30','end_time':'2020/12/18 18:00'}, ignore_index=True)
-        
-
         #------------------------------
 
         self.location = pd.DataFrame(columns=['location'])
@@ -85,7 +83,10 @@ class PredictData:
         df_location.to_csv('sampledata/'+'TrainingData/'+name+'.csv')
         return df_location
     
-    def Data2020Pro(self):
+    def Data2020Pre(self):
+        """
+        2020年度前期
+        """
         lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
         #令和２年度前期
         lectures = lectures.append({'name':'線形代数学１','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
@@ -116,11 +117,176 @@ class PredictData:
 
         return lectures
 
+    def Data2020Late(self):
+        """
+        2020年度後期
+        """
+        lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
+        lectures = lectures.append({'name':'線形代数学２','max_students':80,'period':1,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'電子工学基礎','max_students':120,'period':1,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'人工知能基礎','max_students':80,'period':1,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３E','max_students':20,'period':1,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３F','max_students':20,'period':1,'weekday':'Mon','place':'584'}, ignore_index=True)
+        lectures = lectures.append({'name':'確率論と情報理論','max_students':60,'period':1,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'モデル化と要求開発','max_students':40,'period':1,'weekday':'Mon','place':'494'}, ignore_index=True)
+        lectures = lectures.append({'name':'モデル化と要求開発','max_students':40,'period':1,'weekday':'Mon','place':'495'}, ignore_index=True)
+        #lectures = lectures.append({'name':'アカデミックリテラシー２','max_students':80,'period':1,'weekday':'Mon','place':'494'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２A','max_students':80,'period':2,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２E','max_students':80,'period':2,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'線形代数学２I','max_students':80,'period':2,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習E','max_students':20,'period':2,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習F','max_students':20,'period':2,'weekday':'Mon','place':'584'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報代数楽と符号理論G','max_students':60,'period':2,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'微分方程式','max_students':60,'period':2,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'ニューロコンピューティング','max_students':120,'period':2,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        #lectures = lectures.append({'name':'IT・ビジネスモデル','max_students':80,'period':2,'weekday':'Mon','place':'E工房'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習２A','max_students':80,'period':3,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２I','max_students':80,'period':3,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'システム工学','max_students':80,'period':3,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        lectures = lectures.append({'name':'センサ工学','max_students':100,'period':3,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'経済システム入門','max_students':60,'period':3,'weekday':'Mon','place':'なし'}, ignore_index=True)
+        lectures = lectures.append({'name':'キャリアガイダンス','max_students':100,'period':3,'weekday':'Mon','place':'講堂'}, ignore_index=True)
 
+        return lectures
+    
+    def Data2019Pre(self):
+        """
+        2019年度前期
+        """
+        lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
+        lectures = lectures.append({'name':'線形代数学１','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学１E','max_students':80,'period':1,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'解析学１I','max_students':80,'period':1,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'アルゴリズムとデータ構造A','max_students':80,'period':1,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'応用数学２J','max_students':60,'period':1,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'複雑系計算論','max_students':60,'period':1,'weekday':'Mon','place':'484'}, ignore_index=True)
+        #lectures = lectures.append({'name':'情報ネットワーク特論２','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習１A','max_students':80,'period':2,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'余暇と健康２G','max_students':80,'period':2,'weekday':'Mon','place':'体育館'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習１I','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'アルゴリズムとデータ構造G','max_students':60,'period':2,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'ネットワーク通信理論','max_students':80,'period':2,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'画像工学','max_students':120,'period':2,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        lectures = lectures.append({'name':'信号処理基礎','max_students':60,'period':2,'weekday':'Mon','place':'585'}, ignore_index=True)
+        #lectures = lectures.append({'name':'認知システム通論','max_students':80,'period':2,'weekday':'Mon','place':'R782'}, ignore_index=True)
+        #lectures = lectures.append({'name':'形式言語とオートマトン','max_students':80,'period':3,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'複雑系科学トピックス','max_students':60,'period':3,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'コンピュータと教育','max_students':100,'period':3,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        #lectures = lectures.append({'name':'課題研究３','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'アカデミックリテラシー','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'キャリアガイダンス','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        return lectures
 
+    def Data2019Late(self):
+        """
+        2019年度後期
+        """
+        lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
+        lectures = lectures.append({'name':'線形代数学２','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'電子工学基礎','max_students':100,'period':1,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３E','max_students':20,'period':1,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３F','max_students':20,'period':1,'weekday':'Mon','place':'583'}, ignore_index=True)
+        lectures = lectures.append({'name':'確率論と情報理論','max_students':60,'period':1,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'モデル化と要求開発','max_students':80,'period':1,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'物理と情報処理１','max_students':60,'period':1,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２A','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'余暇と健康２G','max_students':40,'period':2,'weekday':'Mon','place':'体育館'}, ignore_index=True)
+        lectures = lectures.append({'name':'線形代数学２I','max_students':80,'period':2,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'人工知能基礎A','max_students':80,'period':2,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習３E','max_students':20,'period':2,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習３F','max_students':20,'period':2,'weekday':'Mon','place':'584'}, ignore_index=True)
+        #lectures = lectures.append({'name':'プロジェクトマネージメント','max_students':100,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'ニューロコンピューティング','max_students':100,'period':2,'weekday':'Mon','place':'493'}, ignore_index=True)
+        #lectures = lectures.append({'name':'ビジネススキル','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'アカデミックリテラシー','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習２A','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２E','max_students':80,'period':3,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２I','max_students':80,'period':3,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'解析学２A','max_students':80,'period':3,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'システム工学','max_students':80,'period':3,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'センサ工学','max_students':100,'period':3,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        lectures = lectures.append({'name':'経済システム入門','max_students':60,'period':3,'weekday':'Mon','place':'595'}, ignore_index=True)
+        
+        return lectures
+
+    def Data2018Pre(self):
+        """
+        2018年度前期
+        """
+        lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
+        lectures = lectures.append({'name':'線形代数学１','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学１E','max_students':80,'period':1,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'解析学１I','max_students':80,'period':1,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'アルゴリズムとデータ構造A','max_students':80,'period':1,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'応用数学２J','max_students':60,'period':1,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'複雑系計算論','max_students':60,'period':1,'weekday':'Mon','place':'484'}, ignore_index=True)
+        #lectures = lectures.append({'name':'情報ネットワーク特論２','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習１A','max_students':80,'period':2,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'余暇と健康２G','max_students':80,'period':2,'weekday':'Mon','place':'体育館'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習１I','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'アルゴリズムとデータ構造G','max_students':60,'period':2,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'ネットワーク通信理論','max_students':80,'period':2,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'画像工学','max_students':120,'period':2,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        lectures = lectures.append({'name':'信号処理基礎','max_students':60,'period':2,'weekday':'Mon','place':'585'}, ignore_index=True)
+        #lectures = lectures.append({'name':'認知システム通論','max_students':80,'period':2,'weekday':'Mon','place':'R782'}, ignore_index=True)
+        #lectures = lectures.append({'name':'形式言語とオートマトン','max_students':80,'period':3,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'複雑系科学トピックス','max_students':60,'period':3,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'コンピュータと教育','max_students':100,'period':3,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        #lectures = lectures.append({'name':'課題研究３','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'アカデミックリテラシー','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'キャリアガイダンス','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+ 
+        return lectures
+
+    def Data2018Late(self):
+        """
+        2018年度後期
+        """
+        lectures = pd.DataFrame(columns=['name','max_students','period','weekday','place'])
+        lectures = lectures.append({'name':'線形代数学２','max_students':80,'period':1,'weekday':'Mon','place':'593'}, ignore_index=True)
+        #lectures = lectures.append({'name':'電子工学基礎','max_students':100,'period':1,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３E','max_students':20,'period':1,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎３F','max_students':20,'period':1,'weekday':'Mon','place':'583'}, ignore_index=True)
+        lectures = lectures.append({'name':'確率論と情報理論','max_students':60,'period':1,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'モデル化と要求開発','max_students':80,'period':1,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'物理と情報処理１','max_students':60,'period':1,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２A','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'余暇と健康２G','max_students':40,'period':2,'weekday':'Mon','place':'体育館'}, ignore_index=True)
+        lectures = lectures.append({'name':'線形代数学２I','max_students':80,'period':2,'weekday':'Mon','place':'595'}, ignore_index=True)
+        lectures = lectures.append({'name':'人工知能基礎A','max_students':80,'period':2,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習３E','max_students':20,'period':2,'weekday':'Mon','place':'484'}, ignore_index=True)
+        lectures = lectures.append({'name':'情報表現基礎演習３F','max_students':20,'period':2,'weekday':'Mon','place':'584'}, ignore_index=True)
+        #lectures = lectures.append({'name':'プロジェクトマネージメント','max_students':100,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'ニューロコンピューティング','max_students':100,'period':2,'weekday':'Mon','place':'493'}, ignore_index=True)
+        #lectures = lectures.append({'name':'ビジネススキル','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'アカデミックリテラシー','max_students':80,'period':2,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'数学総合演習２A','max_students':80,'period':3,'weekday':'Mon','place':'593'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２E','max_students':80,'period':3,'weekday':'Mon','place':'594'}, ignore_index=True)
+        lectures = lectures.append({'name':'解析学２I','max_students':80,'period':3,'weekday':'Mon','place':'594'}, ignore_index=True)
+        #lectures = lectures.append({'name':'解析学２A','max_students':80,'period':3,'weekday':'Mon','place':'R791'}, ignore_index=True)
+        lectures = lectures.append({'name':'システム工学','max_students':80,'period':3,'weekday':'Mon','place':'493'}, ignore_index=True)
+        lectures = lectures.append({'name':'センサ工学','max_students':100,'period':3,'weekday':'Mon','place':'大講義室'}, ignore_index=True)
+        lectures = lectures.append({'name':'経済システム入門','max_students':60,'period':3,'weekday':'Mon','place':'595'}, ignore_index=True)
+        
+        return lectures
 
 if __name__ == '__main__':
     maru = PredictData()
-    result = maru.GenerateStudents(maru.Data2020Pro(),'2020_pro')
-    
+    result = maru.GenerateStudents(maru.Data2020Pre(),'2020_pro')
     print(result)
+
+    result = maru.GenerateStudents(maru.Data2020Late(),'2020_Late')
+    print(result)
+
+    result = maru.GenerateStudents(maru.Data2019Pre(),'2019_Pre')
+    print(result)
+    
+    result = maru.GenerateStudents(maru.Data2019Late(),'2019_Late')
+    print(result)
+
+    result = maru.GenerateStudents(maru.Data2018Pre(),'2018_Pre')
+    print(result)
+
+    result = maru.GenerateStudents(maru.Data2018Late(),'2018_Late')
+    print(result)
+    
