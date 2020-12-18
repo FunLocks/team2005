@@ -90,6 +90,20 @@ class PredictData:
         df_location.to_csv('sampledata/'+'TrainingData/'+name+'.csv')
         return df_location
     
+    def MakeTestData(self,year,month):
+        test = pd.DataFrame(columns=['location','time'])
+        td_50m = datetime.timedelta(minutes=30)
+        for index, row in self.location.iterrows():
+            d = datetime.datetime(year,month,18,00,00) #2020年12月18日0時０分
+            for i in range(48):
+                test = test.append({'location':row['location'], 'time':d}, ignore_index=True)
+                d = d + td_50m
+
+        test.to_csv('sampledata/test.csv')
+        return
+
+
+    
     def Data2020Pre(self):
         """
         2020年度前期
@@ -297,3 +311,4 @@ if __name__ == '__main__':
     result = maru.GenerateStudents(maru.Data2018Late(),2018,12,'2018_Late')
     print(result)
     
+    maru.MakeTestData(2020,12)
