@@ -2,311 +2,311 @@
     "congections": [
         {
             "location_id": 1,
-            "congection": 11
+            "value": 18
         },
         {
             "location_id": 2,
-            "congection": 13
+            "value": 12
         },
         {
             "location_id": 3,
-            "congection": 13
+            "value": 4
         },
         {
             "location_id": 4,
-            "congection": 13
+            "value": 10
         },
         {
             "location_id": 5,
-            "congection": 7
+            "value": 2
         },
         {
             "location_id": 6,
-            "congection": 5
+            "value": 4
         },
         {
             "location_id": 7,
-            "congection": 1
+            "value": 4
         },
         {
             "location_id": 8,
-            "congection": 7
+            "value": 10
         },
         {
             "location_id": 9,
-            "congection": 19
+            "value": 2
         },
         {
             "location_id": 10,
-            "congection": 11
+            "value": 17
         },
         {
             "location_id": 11,
-            "congection": 2
+            "value": 19
         },
         {
             "location_id": 12,
-            "congection": 2
+            "value": 9
         },
         {
             "location_id": 13,
-            "congection": 1
+            "value": 14
         },
         {
             "location_id": 14,
-            "congection": 11
+            "value": 19
         },
         {
             "location_id": 15,
-            "congection": 15
+            "value": 4
         },
         {
             "location_id": 16,
-            "congection": 1
+            "value": 8
         },
         {
             "location_id": 17,
-            "congection": 11
+            "value": 5
         },
         {
             "location_id": 18,
-            "congection": 17
+            "value": 16
         },
         {
             "location_id": 19,
-            "congection": 17
+            "value": 10
         },
         {
             "location_id": 20,
-            "congection": 5
+            "value": 2
         },
         {
             "location_id": 21,
-            "congection": 5
+            "value": 7
         },
         {
             "location_id": 22,
-            "congection": 20
+            "value": 4
         },
         {
             "location_id": 23,
-            "congection": 14
+            "value": 12
         },
         {
             "location_id": 24,
-            "congection": 12
+            "value": 5
         },
         {
             "location_id": 25,
-            "congection": 4
+            "value": 13
         },
         {
             "location_id": 26,
-            "congection": 12
+            "value": 19
         },
         {
             "location_id": 27,
-            "congection": 10
+            "value": 6
         },
         {
             "location_id": 28,
-            "congection": 20
+            "value": 19
         },
         {
             "location_id": 29,
-            "congection": 1
+            "value": 10
         },
         {
             "location_id": 30,
-            "congection": 3
+            "value": 8
         },
         {
             "location_id": 31,
-            "congection": 8
+            "value": 19
         },
         {
             "location_id": 32,
-            "congection": 3
+            "value": 13
         },
         {
             "location_id": 33,
-            "congection": 19
+            "value": 12
         },
         {
             "location_id": 34,
-            "congection": 19
+            "value": 19
         },
         {
             "location_id": 35,
-            "congection": 14
+            "value": 10
         },
         {
             "location_id": 36,
-            "congection": 9
+            "value": 1
         },
         {
             "location_id": 37,
-            "congection": 6
+            "value": 12
         },
         {
             "location_id": 38,
-            "congection": 10
+            "value": 10
         },
         {
             "location_id": 39,
-            "congection": 11
+            "value": 2
         },
         {
             "location_id": 40,
-            "congection": 3
+            "value": 3
         },
         {
             "location_id": 41,
-            "congection": 13
+            "value": 12
         },
         {
             "location_id": 42,
-            "congection": 19
+            "value": 15
         },
         {
             "location_id": 43,
-            "congection": 13
+            "value": 15
         },
         {
             "location_id": 44,
-            "congection": 12
+            "value": 9
         },
         {
             "location_id": 45,
-            "congection": 14
+            "value": 7
         },
         {
             "location_id": 46,
-            "congection": 11
+            "value": 7
         },
         {
             "location_id": 47,
-            "congection": 3
+            "value": 20
         },
         {
             "location_id": 48,
-            "congection": 1
+            "value": 10
         },
         {
             "location_id": 49,
-            "congection": 5
+            "value": 20
         },
         {
             "location_id": 50,
-            "congection": 3
+            "value": 13
         },
         {
             "location_id": 51,
-            "congection": 13
+            "value": 5
         },
         {
             "location_id": 52,
-            "congection": 10
+            "value": 10
         },
         {
             "location_id": 53,
-            "congection": 10
+            "value": 11
         },
         {
             "location_id": 54,
-            "congection": 4
+            "value": 12
         },
         {
             "location_id": 55,
-            "congection": 16
+            "value": 6
         },
         {
             "location_id": 56,
-            "congection": 13
+            "value": 1
         },
         {
             "location_id": 57,
-            "congection": 6
+            "value": 9
         },
         {
             "location_id": 58,
-            "congection": 12
+            "value": 15
         },
         {
             "location_id": 59,
-            "congection": 17
+            "value": 6
         },
         {
             "location_id": 60,
-            "congection": 6
+            "value": 5
         },
         {
             "location_id": 61,
-            "congection": 11
+            "value": 18
         },
         {
             "location_id": 62,
-            "congection": 13
+            "value": 1
         },
         {
             "location_id": 63,
-            "congection": 16
+            "value": 4
         },
         {
             "location_id": 64,
-            "congection": 5
+            "value": 13
         },
         {
             "location_id": 65,
-            "congection": 17
+            "value": 8
         },
         {
             "location_id": 66,
-            "congection": 18
+            "value": 14
         },
         {
             "location_id": 67,
-            "congection": 10
+            "value": 13
         },
         {
             "location_id": 68,
-            "congection": 19
+            "value": 4
         },
         {
             "location_id": 69,
-            "congection": 16
+            "value": 20
         },
         {
             "location_id": 70,
-            "congection": 9
+            "value": 7
         },
         {
             "location_id": 71,
-            "congection": 14
+            "value": 12
         },
         {
             "location_id": 72,
-            "congection": 2
+            "value": 6
         },
         {
             "location_id": 73,
-            "congection": 16
+            "value": 2
         },
         {
             "location_id": 74,
-            "congection": 18
+            "value": 3
         },
         {
             "location_id": 75,
-            "congection": 18
+            "value": 6
         },
         {
             "location_id": 76,
-            "congection": 1
+            "value": 7
         },
         {
             "location_id": 77,
-            "congection": 10
+            "value": 16
         }
     ]
 }

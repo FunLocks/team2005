@@ -68,9 +68,9 @@ class GenerateData:
         return
     
     def now_situation(self, random_min: int, random_max: int):
-        df_1 = pd.DataFrame(columns=['location_id','congection'])
+        df_1 = pd.DataFrame(columns=['location_id','value'])
         for i in range(77):
-            df_1 = df_1.append({'location_id':i+1, 'congection':random.randint(random_min,random_max)}, ignore_index=True)
+            df_1 = df_1.append({'location_id':i+1, 'value':random.randint(random_min,random_max)}, ignore_index=True)
         
         print(df_1)
         json_data = df_1.to_dict(orient='records')
