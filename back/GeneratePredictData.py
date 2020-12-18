@@ -18,14 +18,7 @@ class PredictData:
         #平成30年度後期
         #-----------------------------
 
-        #時間割データ--------------------
-        self.periods = pd.DataFrame(columns=['period','start_time','end_time'])
-        self.periods = self.periods.append({'period':1,'start_time':'2020/12/18 09:00','end_time':'2020/12/18 10:30'}, ignore_index=True)
-        self.periods = self.periods.append({'period':2,'start_time':'2020/12/18 10:40','end_time':'2020/12/18 12:10'}, ignore_index=True)
-        self.periods = self.periods.append({'period':3,'start_time':'2020/12/18 13:10','end_time':'2020/12/18 14:40'}, ignore_index=True)
-        self.periods = self.periods.append({'period':4,'start_time':'2020/12/18 14:50','end_time':'2020/12/18 16:20'}, ignore_index=True)
-        self.periods = self.periods.append({'period':5,'start_time':'2020/12/18 16:30','end_time':'2020/12/18 18:00'}, ignore_index=True)
-        #------------------------------
+
 
         self.location = pd.DataFrame(columns=['location'])
         self.location = self.location.append({'location':'595'}, ignore_index=True)
@@ -40,16 +33,30 @@ class PredictData:
         self.location = self.location.append({'location':'大講義室'}, ignore_index=True)
         return
     
-    def GenerateStudents(self,lectures,name):
-        df_location = pd.DataFrame(columns=['location','time','students'])
+    def Periods(self,year,month):
+        #時間割データ--------------------
+        timezone = str(year)+'/'+str(month)
 
-        df = (pd.merge(lectures,self.periods,on='period')) #このlecturesを引数にすれば良い感じに生成できそう
+        periods = pd.DataFrame(columns=['period','start_time','end_time'])
+        periods = periods.append({'period':1,'start_time': timezone+'/18 09:00','end_time':timezone+'/18 10:30'}, ignore_index=True)
+        periods = periods.append({'period':2,'start_time':timezone+'/18 10:40','end_time':timezone+'/18 12:10'}, ignore_index=True)
+        periods = periods.append({'period':3,'start_time':timezone+'/18 13:10','end_time':timezone+'/18 14:40'}, ignore_index=True)
+        periods = periods.append({'period':4,'start_time':timezone+'/18 14:50','end_time':timezone+'/18 16:20'}, ignore_index=True)
+        periods = periods.append({'period':5,'start_time':timezone+'/18 16:30','end_time':timezone+'/18 18:00'}, ignore_index=True)
+        #------------------------------
+        return periods
+    
+    def GenerateStudents(self,lectures,year,month,name):
+        df_location = pd.DataFrame(columns=['location','time','students'])
+        df_period = self.Periods(year,month)
+
+        df = (pd.merge(lectures,df_period,on='period')) #このlecturesを引数にすれば良い感じに生成できそう
         print(df)
 
         
         td_50m = datetime.timedelta(minutes=30)
         for index, row in self.location.iterrows():
-            d = datetime.datetime(2020,12,18,00,00) #2020年12月18日0時０分
+            d = datetime.datetime(year,month,18,00,00) #2020年12月18日0時０分
             for i in range(48):
 
                 #その曜日にその教室でやってる授業一覧
@@ -63,7 +70,7 @@ class PredictData:
                         if lec_start <=d and lec_end >=d: #その場所で講義時間内なら
                             df_location = df_location.append({'location':row['location'], 'time':d,'students':random.randint(row_loc['max_students']-10,row_loc['max_students'])}, ignore_index=True)
                                         
-                        elif datetime.datetime(2020,12,18,8,0) >= d or datetime.datetime(2020,12,18,22,0) <= d: #教室がしまってる朝8時まで夜２２時以降
+                        elif datetime.datetime(year,month,18,8,0) >= d or datetime.datetime(year,month,18,22,0) <= d: #教室がしまってる朝8時まで夜２２時以降
                             df_location = df_location.append({'location':row['location'], 'time':d,'students':0}, ignore_index=True)
                             
                         else:
@@ -72,7 +79,7 @@ class PredictData:
                     
                 else:
                     #その曜日にその教室で授業はなし
-                    if datetime.datetime(2020,12,18,0,0) <= d and datetime.datetime(2020,12,18,8,0) >= d and datetime.datetime(2020,12,18,22,0) <= d: #教室がしまってる朝8時まで夜２２時以降
+                    if datetime.datetime(year,month,18,0,0) <= d and datetime.datetime(year,month,18,8,0) >= d and datetime.datetime(2020,12,18,22,0) <= d: #教室がしまってる朝8時まで夜２２時以降
                         df_location = df_location.append({'location':row['location'], 'time':d,'students':0}, ignore_index=True)
                         
                     else:
@@ -272,21 +279,21 @@ class PredictData:
 
 if __name__ == '__main__':
     maru = PredictData()
-    result = maru.GenerateStudents(maru.Data2020Pre(),'2020_pro')
+    result = maru.GenerateStudents(maru.Data2020Pre(),2020,5,'2020_Pre')
     print(result)
 
-    result = maru.GenerateStudents(maru.Data2020Late(),'2020_Late')
+    result = maru.GenerateStudents(maru.Data2020Late(),2020,12,'2020_Late')
     print(result)
 
-    result = maru.GenerateStudents(maru.Data2019Pre(),'2019_Pre')
+    result = maru.GenerateStudents(maru.Data2019Pre(),2019,5,'2019_Pre')
     print(result)
     
-    result = maru.GenerateStudents(maru.Data2019Late(),'2019_Late')
+    result = maru.GenerateStudents(maru.Data2019Late(),2019,12,'2019_Late')
     print(result)
 
-    result = maru.GenerateStudents(maru.Data2018Pre(),'2018_Pre')
+    result = maru.GenerateStudents(maru.Data2018Pre(),2018,5,'2018_Pre')
     print(result)
 
-    result = maru.GenerateStudents(maru.Data2018Late(),'2018_Late')
+    result = maru.GenerateStudents(maru.Data2018Late(),2018,12,'2018_Late')
     print(result)
     
