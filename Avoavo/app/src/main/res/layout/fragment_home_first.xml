@@ -48,7 +48,7 @@
         android:id="@+id/circle_3"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="334dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/congestion_circle"
         app:layout_constraintBottom_toBottomOf="@+id/fun_1F"
         app:layout_constraintEnd_toEndOf="@+id/fun_1F"
