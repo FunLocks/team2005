@@ -311,4 +311,4 @@ if __name__ == '__main__':
     result = maru.GenerateStudents(maru.Data2018Late(),2018,12,'2018_Late')
     print(result)
     
-    maru.MakeTestData(2020,12)
+    maru.MakeTestData(2021,12)
