@@ -12,7 +12,8 @@ db.init_app(app)
 @app.route('/now_situation', methods=['GET'])
 def get_now():
     json_open = open('sampledata/CongectionNow.json', 'r')
-    return jsonify(json_open)
+    json_load = json.load(json_open)
+    return jsonify(json_load)
 
 @app.route('/favorite_predict/<location_id>', methods=['GET'])
 def get_fav(location_id):
