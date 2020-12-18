@@ -55,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="@+id/fun_1F"
         app:layout_constraintTop_toTopOf="@+id/fun_1F"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <ImageView
         android:id="@+id/circle_4"
