@@ -9,10 +9,8 @@ import android.annotation.SuppressLint
 import android.os.RemoteException
 import android.util.Log
 import android.widget.Toast
-import com.yeahoohunters.avoavo.model.room.NowSituationDao
-import com.yeahoohunters.avoavo.model.room.NowSituationDatabase
-import com.yeahoohunters.avoavo.repository.NowSituationRepository
-import kotlinx.coroutines.*
+import androidx.appcompat.widget.Toolbar
+import kotlinx.android.synthetic.main.fragment_forecast.view.*
 import org.altbeacon.beacon.*
 import permissions.dispatcher.*
 import java.sql.Date
@@ -80,7 +78,9 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
             .replace(R.id.frameLayout, HomeFragment())
             .commit()
 
-
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        toolbar.setNavigationIcon(R.drawable.ic_fun_locks_icon)
+        setSupportActionBar(toolbar)
 
         beaconManager = BeaconManager.getInstanceForApplication(this)
         beaconManager.isRegionStatePersistenceEnabled = false
