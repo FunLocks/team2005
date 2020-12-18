@@ -73,7 +73,8 @@ class GenerateData:
             df_1 = df_1.append({'location_id':i+1, 'congection':random.randint(random_min,random_max)}, ignore_index=True)
         
         print(df_1)
-        json_data = df_1.to_dict()
+        json_data = df_1.to_dict(orient='records')
+        json_data = {"congections":json_data}
 
         filename = "sampledata/CongectionNow.json"
         print(filename)
@@ -88,4 +89,4 @@ class GenerateData:
 
 if __name__ == '__main__':
     generator = GenerateData()
-    generator.predict(1,20)
+    generator.now_situation(1,20)
