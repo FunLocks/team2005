@@ -55,16 +55,16 @@ class PredictData:
 
         
         td_50m = datetime.timedelta(minutes=30)
-        for index, row in self.location.iterrows():
+        for _, row in self.location.iterrows():
             d = datetime.datetime(year,month,18,00,00) #2020年12月18日0時０分
-            for i in range(48):
+            for _ in range(48):
 
                 #その曜日にその教室でやってる授業一覧
                 info_loc = df[df['place']==row['location']]
 
                 #その曜日にその教室で授業ひとつ以上
                 if len(info_loc.index) != 0: 
-                    for index_loc,row_loc in info_loc.iterrows():
+                    for _,row_loc in info_loc.iterrows():
                         lec_start = datetime.datetime.strptime(row_loc['start_time'],'%Y/%m/%d %H:%M')
                         lec_end = datetime.datetime.strptime(row_loc['end_time'],'%Y/%m/%d %H:%M')
                         if lec_start <=d and lec_end >=d: #その場所で講義時間内なら
@@ -93,9 +93,9 @@ class PredictData:
     def MakeTestData(self,year,month):
         test = pd.DataFrame(columns=['location','time'])
         td_50m = datetime.timedelta(minutes=30)
-        for index, row in self.location.iterrows():
+        for _, row in self.location.iterrows():
             d = datetime.datetime(year,month,18,00,00) #2020年12月18日0時０分
-            for i in range(48):
+            for _ in range(48):
                 test = test.append({'location':row['location'], 'time':d}, ignore_index=True)
                 d = d + td_50m
 
