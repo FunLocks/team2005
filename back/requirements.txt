@@ -5,3 +5,4 @@ SQLAlchemy
 flask-sqlalchemy
 pandas
 xgboost
+numpy
