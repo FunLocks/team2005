@@ -1,7 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -42,10 +42,41 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    def navigation_version = '2.3.1'
+
+    // navigation
+    def navigation_version = '2.3.2'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
     testImplementation 'junit:junit:4.+'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // altbeacon
+    def altbeacon_version = "2.17.1"
+    def broadcast_version = "1.0.0"
+    def permissionsDispatcher_version = "4.8.0"
+    implementation "org.altbeacon:android-beacon-library:$altbeacon_version"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:$broadcast_version"
+    implementation "org.permissionsdispatcher:permissionsdispatcher:$permissionsDispatcher_version"
+    kapt "org.permissionsdispatcher:permissionsdispatcher-processor:$permissionsDispatcher_version"
+
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0"
+
+    // Graph Plot
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
