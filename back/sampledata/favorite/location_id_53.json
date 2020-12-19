@@ -1,0 +1,100 @@
+{
+    "congection": [
+        {
+            "time": 1,
+            "value": 16
+        },
+        {
+            "time": 2,
+            "value": 4
+        },
+        {
+            "time": 3,
+            "value": 10
+        },
+        {
+            "time": 4,
+            "value": 10
+        },
+        {
+            "time": 5,
+            "value": 3
+        },
+        {
+            "time": 6,
+            "value": 1
+        },
+        {
+            "time": 7,
+            "value": 4
+        },
+        {
+            "time": 8,
+            "value": 6
+        },
+        {
+            "time": 9,
+            "value": 20
+        },
+        {
+            "time": 10,
+            "value": 19
+        },
+        {
+            "time": 11,
+            "value": 11
+        },
+        {
+            "time": 12,
+            "value": 19
+        },
+        {
+            "time": 13,
+            "value": 19
+        },
+        {
+            "time": 14,
+            "value": 2
+        },
+        {
+            "time": 15,
+            "value": 4
+        },
+        {
+            "time": 16,
+            "value": 2
+        },
+        {
+            "time": 17,
+            "value": 12
+        },
+        {
+            "time": 18,
+            "value": 5
+        },
+        {
+            "time": 19,
+            "value": 20
+        },
+        {
+            "time": 20,
+            "value": 8
+        },
+        {
+            "time": 21,
+            "value": 18
+        },
+        {
+            "time": 22,
+            "value": 13
+        },
+        {
+            "time": 23,
+            "value": 16
+        },
+        {
+            "time": 24,
+            "value": 14
+        }
+    ]
+}
