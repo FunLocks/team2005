@@ -15,6 +15,7 @@ CAPUCI (CAsual Predict User CIrcumstance)
 
 ### 推しポイント
 - CAPUCIのロゴを作成した
+- 機械学習を用いた統計予測
 
 ### スクリーンショット(任意)
 ![image1](https://user-images.githubusercontent.com/66785066/102675179-c1cccd80-41db-11eb-9770-135753064bad.png)
