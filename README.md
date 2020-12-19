@@ -24,7 +24,7 @@ CAPUCI (CAsual Predict User CIrcumstance)
 
 ## 開発体制
 ### 役割分担
-田島鼓太郎 : 
+田島鼓太郎 : フロント側のAPI周りの処理、チームメンバーのサポート
 日置竜輔 : beaconの検知、グラフの作成・可視化、README作成
 山本晃平 : figmaを用いたデザイン設計、Adobe Illustrator を用いたアプリのロゴ作成、プレゼン資料作成
 加藤万理子 : サーバーAPI作成、サンプルデータの生成、機械学習を用いて過去の時間割から混雑を予測し、可視化してHerokuへデプロイ
