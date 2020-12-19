@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity(), BeaconConsumer {
             .commit()
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_fun_locks_icon)
+        toolbar.setNavigationIcon(R.drawable.ic_fun_locks_icon4)
         setSupportActionBar(toolbar)
 
         beaconManager = BeaconManager.getInstanceForApplication(this)
