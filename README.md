@@ -41,15 +41,17 @@ CAPUCI (CAsual Predict User CIrcumstance)
 
 ## 開発技術(任意)
 ### 利用したプログラミング言語
-フロントエンド : kotlin
+フロントエンド : kotlin, html, css, javascript
 バックエンド : Python, PostgreSQL
 
 ### 利用したフレームワーク・ライブラリ
 #### フロントエンド 
-Android Studio : (アプリ作成), android-beacon-library : (ビーコン検知), Room Persistence Library : (データベース), retrofit : (Android用HTTP Client), gson : (JSONパース)
+Android Studio : (アプリ作成), android-beacon-library : (ビーコン検知), Room Persistence Library : (データベース), retrofit : (Android用HTTP Client), 
+gson : (JSONパース), Bootstrap(WEB), amCharts(WEB)
 
 #### バックエンド
-Flask : (webAPI), gunicorn : (Heroku), psycopg2 : （Heroku）, SQLAlchemy : （DB）, flask-sqlalchemy : （DB）, pandas : （データ処理）
+Flask : (webAPI), gunicorn : (Heroku), psycopg2 : （Heroku）, SQLAlchemy : （DB）, flask-sqlalchemy : （DB）, pandas : （データ処理）, 
+XGBoost : (機械学習), scikit-learn : (機械学習)
 
 ### その他開発に使用したツール
 figma (UIデザイン), miro (オンラインホワイトボード), Google Doc （議事録の共有）, Discord （チーム内での連絡）, Slack (進捗報告、メンターさんへの質問等)
