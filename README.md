@@ -47,8 +47,4 @@ Android Studio : (アプリ作成), android-beacon-library : (ビーコン検知
 Flask : (webAPI), gunicorn : (Heroku), psycopg2 : （Heroku）, SQLAlchemy : （DB）, flask-sqlalchemy : （DB）, pandas : （データ処理）
 
 ### その他開発に使用したツール
-figma (UIデザイン)
-miro (オンラインホワイトボード)
-Google Doc （議事録の共有）
-Discord （チーム内での連絡）
-Slack (進捗報告、メンターさんへの質問等)
+figma (UIデザイン), miro (オンラインホワイトボード), Google Doc （議事録の共有）, Discord （チーム内での連絡）, Slack (進捗報告、メンターさんへの質問等)
