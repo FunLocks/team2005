@@ -1,18 +1,20 @@
-from flask import Flask, render_template,jsonify,request # 変更
+from flask import Flask, render_template,jsonify,request
 from database import db, beacon_data
 from now_people import now_congection
 #from favorite_predict import favorite_predict
 import json
 
-app = Flask(__name__)
+
+app = Flask(__name__,static_folder='static')
 app.config["JSON_AS_ASCII"] = False
 app.config.from_object('config.Config')
 db.init_app(app)
 
 @app.route('/now_situation', methods=['GET'])
 def get_now():
-    response = now_congection()
-    return jsonify(response)
+    json_open = open('sampledata/CongectionNow.json', 'r')
+    json_load = json.load(json_open)
+    return jsonify(json_load)
 
 @app.route('/favorite_predict/<location_id>', methods=['GET'])
 def get_fav(location_id):
@@ -39,6 +41,26 @@ def post():
     db.session.add(beacon_data(location_id=location, time=value))
     db.session.commit()
     return jsonify(data)
+
+#363
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+#595
+@app.route('/index_1')
+def home_595():
+    return render_template('index_1.html')
+
+#講堂
+@app.route('/index_2')
+def home_koudou():
+    return render_template('index_2.html')
+
+#大講義室
+@app.route('/index_3')
+def home_kougi():
+    return render_template('index_3.html')
 
 
 if __name__ == '__main__':

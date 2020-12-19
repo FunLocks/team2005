@@ -11,10 +11,9 @@ from sklearn.preprocessing import LabelEncoder
 import datetime
 import numpy as np
 import datetime
+import json
 
 class Model:
-
-
 
     def training(self,X_train,Y_train):
         """
@@ -47,6 +46,14 @@ class Model:
         result = self.Formating(result)
 
         print(result)
+
+        json_data = result.to_dict(orient='records')
+
+        filename = 'sampledata/congestion_preds.json'
+        print(filename)
+        with open(filename, 'w') as f:
+            json.dump(json_data, f, indent=4,ensure_ascii=False)
+
         result.to_csv('sampledata/congestion_preds.csv')
         return result
     
@@ -101,7 +108,6 @@ if __name__ == '__main__':
     X_train = train.drop(columns=['students'])
     Y_train = train['students']
     model.training(X_train,Y_train)
-
     """
 
     #予測する
